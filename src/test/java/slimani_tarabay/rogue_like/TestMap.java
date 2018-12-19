@@ -87,4 +87,28 @@ public class TestMap extends TestCase{
 		map.setArme(Arme.EPAIS);
 		assertEquals(Arme.EPAIS, map.getArme());
 	}
+	
+	public void testMovePlayer() {
+		int x=0,y=0,xj,yj;
+		Map map = new Map();
+		map.initCarte();
+		xj=map.getJoueur().getCoordonneesX();
+		yj=map.getJoueur().getCoordonneesY();
+		if(map.getCarte()[map.getJoueur().getCoordonneesY()+1][map.getJoueur().getCoordonneesX()] == DecorMap.SOL) {
+			try {map.movePlayer(0, 1);x=0;y=1;}
+			catch (NoMoveException e) {e.getMessage();}
+		}else if(map.getCarte()[map.getJoueur().getCoordonneesY()-1][map.getJoueur().getCoordonneesX()] == DecorMap.SOL) {
+			try {map.movePlayer(0, -1);x=0;y=-1;}
+			catch (NoMoveException e) {e.getMessage();}
+		}else if(map.getCarte()[map.getJoueur().getCoordonneesY()][map.getJoueur().getCoordonneesX()+1] == DecorMap.SOL) {
+			try {map.movePlayer(1, 0);x=1;y=0;}
+			catch (NoMoveException e) {e.getMessage();}
+		}else if(map.getCarte()[map.getJoueur().getCoordonneesY()][map.getJoueur().getCoordonneesX()-1] == DecorMap.SOL) {
+			try {map.movePlayer(-1, 0);x=-1;y=0;}
+			catch (NoMoveException e) {e.getMessage();}
+		}else {
+			testMovePlayer();
+		}
+		assertTrue(map.getCarte()[yj+y][xj+x].toString().equals("@"));
+	}
 }
