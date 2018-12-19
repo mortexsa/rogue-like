@@ -56,14 +56,24 @@ public abstract class Personnage {
 	public int getCoordonneesY() {
 		return coordonneesY;
 	}
+	/**
+	 * Fonction pour recuperer les points de Vie
+	 * @return type int
+	 */
 	public int getPointDeVie() {
 		return pointDeVie;
 	}
-	
+	/**
+	 * Fonction pour recupperer l'apparence
+	 * @return type String
+	 */
 	public String getApparence() {
 		return apparence;
 	}
-
+	/**
+	 * Fonction pour inserer l'apparence
+	 * @param apparence type String
+	 */
 	public void setApparence(String apparence) {
 		this.apparence = apparence;
 	}

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="slimani_tarabay.rogue_like.AppTest" time="0" errors="0" skipped="0">
+<testsuite tests="21" failures="0" name="slimani_tarabay.rogue_like.TestJoueur" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="10.0.2+13-Ubuntu-1ubuntu0.18.04.4"/>
@@ -62,5 +62,25 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="slimani_tarabay.rogue_like.AppTest" name="testApp" time="0"/>
+  <testcase classname="slimani_tarabay.rogue_like.TestJoueur" name="testJoueur2" time="0"/>
+  <testcase classname="slimani_tarabay.rogue_like.TestJoueur" name="testJoueur3" time="0"/>
+  <testcase classname="slimani_tarabay.rogue_like.TestJoueur" name="testJoueur4" time="0"/>
+  <testcase classname="slimani_tarabay.rogue_like.TestJoueur" name="testJoueur5" time="0"/>
+  <testcase classname="slimani_tarabay.rogue_like.TestJoueur" name="testJoueur6" time="0"/>
+  <testcase classname="slimani_tarabay.rogue_like.TestJoueur" name="testMove2" time="0"/>
+  <testcase classname="slimani_tarabay.rogue_like.TestJoueur" name="testTaper" time="0"/>
+  <testcase classname="slimani_tarabay.rogue_like.TestJoueur" name="testMove" time="0"/>
+  <testcase classname="slimani_tarabay.rogue_like.TestJoueur" name="testConstructeur" time="0"/>
+  <testcase classname="slimani_tarabay.rogue_like.TestJoueur" name="testSetJoueur2" time="0"/>
+  <testcase classname="slimani_tarabay.rogue_like.TestJoueur" name="testSetJoueur3" time="0"/>
+  <testcase classname="slimani_tarabay.rogue_like.TestJoueur" name="testSetJoueur4" time="0"/>
+  <testcase classname="slimani_tarabay.rogue_like.TestJoueur" name="testSetJoueur5" time="0"/>
+  <testcase classname="slimani_tarabay.rogue_like.TestJoueur" name="testSetJoueur6" time="0"/>
+  <testcase classname="slimani_tarabay.rogue_like.TestJoueur" name="testSetJoueur7" time="0"/>
+  <testcase classname="slimani_tarabay.rogue_like.TestJoueur" name="testSetJoueur8" time="0"/>
+  <testcase classname="slimani_tarabay.rogue_like.TestJoueur" name="testSetJoueur" time="0"/>
+  <testcase classname="slimani_tarabay.rogue_like.TestJoueur" name="testJoueur" time="0"/>
+  <testcase classname="slimani_tarabay.rogue_like.TestJoueur" name="testTaper2" time="0"/>
+  <testcase classname="slimani_tarabay.rogue_like.TestJoueur" name="testTaper3" time="0"/>
+  <testcase classname="slimani_tarabay.rogue_like.TestJoueur" name="testTaper4" time="0"/>
 </testsuite>

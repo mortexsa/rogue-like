@@ -5,15 +5,34 @@ package slimani_tarabay.rogue_like;
  *
  */
 public enum DecorMap {
-	
-	BORDURE("G"),SOL(" "),SORTIE("0"),MUR("#");
+	/**
+	 * Decor reprentant la bordure
+	 */
+	BORDURE("G"),
+	/**
+	 * Decor reprentant la sortie
+	 */
+	SOL(" "),
+	/**
+	 * Decor reprentant la sortie
+	 */
+	SORTIE("0"),
+	/**
+	 * Decor reprentant le mur
+	 */
+	MUR("#");
 	
 	private String type;
-	
+	/**
+	 * Constructeur de l'enum
+	 * @param type String
+	 */
 	private DecorMap(String type) {
 		this.type = type;
 	}
-	
+	/**
+	 * Pour l'afficher en forme de String
+	 */
 	@Override
 	public String toString() {
 		return this.type;

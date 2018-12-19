@@ -17,7 +17,10 @@ public class Joueur extends Personnage{
 		super(coordonneesX, coordonneesY, apparence, pointDeVie);
 		this.pointDeMagie = pointDeMagie;
 	}
-
+	/**
+	 * Fonction pour mettre les points de magie du joueur
+	 * @param pointDeMagie type int
+	 */
 	public void setPointDeMagie(int pointDeMagie) {
 		this.pointDeMagie = pointDeMagie;
 	}
@@ -34,15 +37,25 @@ public class Joueur extends Personnage{
 		this.pointDeMagie=this.pointDeMagie-1;
 		
 	}
-
+	/**
+	 * Fonction pour recuperer l'arme du joueur
+	 * @return Arme
+	 */
 	public Arme getArme() {
 		return arme;
 	}
-
+	/**
+	 * Fonction pour mettre l'arme du joueur
+	 * 
+	 * @param arme type Arme
+	 */
 	public void setArme(Arme arme) {
 		this.arme = arme;
 	}
-
+	/**
+	 * Fonctio pour recuperer les points de magie du joueur
+	 * @return int
+	 */
 	public int getPointDeMagie() {
 		return pointDeMagie;
 	}
