@@ -23,21 +23,21 @@ public abstract class Personnage {
 	}
 	/**
 	 * Fonction pour inserer la coordonnees X du personnage
-	 * @param coordonneesX
+	 * @param coordonneesX Pour inserer coordonnee X du Personnage
 	 */
 	public void setCoordonneesX(int coordonneesX) {
 		this.coordonneesX = coordonneesX;
 	}
 	/**
 	 * Fonction pour inserer la coordonnee Y du personnage
-	 * @param coordonneesY
+	 * @param coordonneesY Pour inserer coordonnee Y du Personnage
 	 */
 	public void setCoordonneesY(int coordonneesY) {
 		this.coordonneesY= coordonneesY;
 	}
 	/**
 	 * Fonction pour inserer le nb de points de vie du personnage
-	 * @param pointDeVie
+	 * @param pointDeVie Pour inserer le nombre de point de vie que le personnage possede
 	 */
 	public void setPointDeVie(int pointDeVie) {
 		this.pointDeVie = pointDeVie;
@@ -51,7 +51,7 @@ public abstract class Personnage {
 	}
 	/**
 	 * Retourn la coordonnee Y
-	 * @return
+	 * @return un type int
 	 */
 	public int getCoordonneesY() {
 		return coordonneesY;
@@ -75,15 +75,19 @@ public abstract class Personnage {
 	/** 
 	 * Fonction qui permet au personnage de taper un autre personnage , soit les dragons soit les joueurs
 	 * @param p qui est le personnage, soit dragons soit joueur
-	 * @param a
-	 * @throws TaperInterdit
+	 * @param a est l'arme qu'il va utiliser
+	 * @throws TaperInterdit Cette exception est declancher lorsque le personnage est trop loin pour etre taper
 	 */
 	public void taper(Personnage p,Arme a) throws TaperInterdit
 	{	
 		int pv = p.getPointDeVie()-a.perdPoints();
 
 	}
-	
+	/**
+	 * Cette fonction est pour changer les parametres du personnage lorsqu'il se deplace
+	 * @param a dans le sens de x
+	 * @param b dans le sens de y
+	 */
 	public void move(int a,int b)
 	{
 		setCoordonneesX(getCoordonneesX()+a);

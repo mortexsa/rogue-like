@@ -2,13 +2,36 @@ package slimani_tarabay.rogue_like;
 
 import java.util.ArrayList;
 import java.util.EnumSet;
-
+/**
+ * La classe Map contient la carte du jeu et les details sur la carte, elle contient comme elements la hauteur de la carte,sa largeur
+ * nbrMur nombre maximal de mur crees,nb le nombre de mur en effet crees, le niveau du joueur,le joueur et la liste de dragons crees et l'arme cree aleatoriement)
+ * @author marianetarabay
+ *
+ */
 public class Map {
+	/**
+	 * Hauteur de la matrice
+	 */
 	private int hauteur = 10;
+	/**
+	 * Largeur de la matrice
+	 */
 	private int largeur = 20;
+	/**
+	 * Nombre de murs maximal qu'il peut y avoir
+	 */
 	private int nbrMur = (hauteur*largeur)/9;
+	/**
+	 * Nombre de monstres
+	 */
 	public static final int nbrMonstre = 3;
+	/**
+	 * Nombre de murs qu'il y a
+	 */
 	private int nb=0;
+	/**
+	 * Level du joueur
+	 */
 	public static int level = 1;
 	private Object[][] carte;
 	private Joueur joueur;
@@ -21,11 +44,24 @@ public class Map {
 	public void setArme(Arme arme) {
 		this.arme = arme;
 	}
+	/**
+	 * Ce constructeur est appele lorsque le joueur commence un nouveau jeu
+	 */
 	public Map() {
 		carte = new Object[hauteur][largeur];
 		this.joueur=new Joueur((int)((Math.random()*(largeur-2))+1),(int)((Math.random()*(hauteur-2))+1),"@",20, 20);
 		this.dragon = new ArrayList<Dragon>(); 
-	} 
+	}
+	/**
+	 * 
+	 * @param h: hauteur du jeu
+	 * @param l largeur du jeu
+	 * @param le level du joueur
+	 * @param j joueur
+	 * @param d liste des dragons
+	 * @param a arme qui est sur la carte
+	 * 
+	 */
 	public Map(int h,int l,int le,Joueur j,ArrayList<Dragon> d,Arme a) {
 		this.hauteur=h;
 		this.largeur=l;
@@ -36,7 +72,10 @@ public class Map {
 		carte = new Object[hauteur][largeur];
 		this.joueur=j;
 		this.dragon = d; 
-	} 
+	}
+	/**
+	 * l'init carte est pour mettre les valeurs dans une carte nouvellement cree. Les murs,l'arme et les dragons sont choisi aleatoirement
+	 */
 	public void initCarte() {
 		int x,y;
 		int randomX,randomY;
@@ -112,7 +151,15 @@ public class Map {
 	public void setNb(int nb) {
 		this.nb = nb;
 	}
-	
+	/**
+	 * Cette methode est pour remettre la carte telle qu'elle etait avant la sauvegarde
+	 * @param xa represente l'abscisse de l'arme cree aleatoirement
+	 * @param ya represente l'ordonnee de l'arme cree aleatoirement
+	 * @param xs represente l'abscisse de la sortie cree aleatoirement
+	 * @param ys  represente l'ordonnee de la sortie cree aleatoirement
+	 * @param n represente le nombre de dragons cree
+	 * @param murs represente les coordonnees des murs a remettre
+	 */
 	public void remettreCarte(int xa,int ya,int xs,int ys,int n,String[][] murs) {
 		int x,y;
 		int randomX,randomY;
@@ -163,25 +210,47 @@ public class Map {
 		map += "\n";
 		return map;
 	}
+	/**
+	 * Pour recuperer le niveau
+	 * @return type int
+	 */
 	public int getLevel() {
 		return level;
 	}
-
+	/**
+	 * Pour mettre le niveau
+	 * @param level type int
+	 */
 	public void setLevel(int level) {
 		Map.level = level;
 	}
-
+	/**
+	 * Pour recuperer la hauteur
+	 * @return type int
+	 */
 	public int getHauteur() {
 		return hauteur;
 	}
-
+	/**
+	 * Pour recuperer la largeur
+	 * @return type int
+	 */
 	public int getLargeur() {
 		return largeur;
 	}
-
+	/**
+	 * Pour recuperer le nombre de murs
+	 * @return type int
+	 */
 	public int getNbrmur() {
 		return nbrMur;
 	}
+	/**
+	 * Cette fonction est pour controler le mouvement du joueur ou des dragons
+	 * @param x de combien il doit augmenter en abscisse
+	 * @param y de combien il doit augmenter en ordonnee
+	 * @throws NoMoveException Cette exception est declancher lorsque le joueur va vers un mur
+	 */
 	public void movePlayer(int x,int y) throws NoMoveException
 	{
 		int i,randomDirection;
@@ -236,39 +305,64 @@ public class Map {
 		}
 		
 	}
-	
+	/**
+	 * Pour recuperer x du joueur
+	 * @return type int
+	 */
 	public int coordxJ()
 	{
 		return this.joueur.getCoordonneesX();
 	}
-	
+	/**
+	 * Pour recuperer y du joueur
+	 * @return type int
+	 */
 	public int coordyJ()
 	{
 		return this.joueur.getCoordonneesY();
 	}
-	
+	/**
+	 * Pour recuperer le joueur
+	 * @return type joueur
+	 */
 	public Joueur getJoueur()
 	{
 		return this.joueur;
 	}
-
+	/**
+	 * Pour recuperer le Dragon a un index donne
+	 * @param i type int
+	 * @return type Dragon
+	 */
 	public Dragon getDragon(int i)
 	{
 		return this.dragon.get(i);
 	}
-
+	/**
+	 *  Pour recuperer la carte
+	 * @return type Objet
+	 */
 	public Object[][] getCarte() {
 		return carte;
 	}
-
+	/**
+	 * Pour recuperer la liste de dragons
+	 * @return type ArrayList
+	 */
 	public ArrayList<Dragon> getDragon() {
 		return dragon;
 	}
-
+	/**
+	 * Pour inserer liste de dragon
+	 * @param dragon type ArrayList
+	 */
 	public void setDragon(ArrayList<Dragon> dragon) {
 		this.dragon = dragon;
 	}
-
+	/**
+	 * Pour inserer la carte
+	 * @param carte type Objet[][]
+	 */
 	public void setCarte(Object[][] carte) {
 		this.carte = carte;
 	}

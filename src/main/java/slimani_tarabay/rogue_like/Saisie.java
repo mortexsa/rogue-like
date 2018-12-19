@@ -13,12 +13,35 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.sound.midi.SysexMessage;
-
+/**
+ * La classe saisie est pour demarrer et controler le jeu 
+ * @author marianetarabay
+ *
+ */
 public class Saisie {
+	/**
+	 * C'est Argumenrt static map
+	 */
 	static Map map;
+	/**
+	 * variable statique pour connaitre le niveau maximal auquel peut arriver le joueur
+	 */
 	public static final int levelFinal = 5;
+	/**
+	 * Variable pour voir si le joueur a perdu la partie
+	 */
 	public static int echecPartie = 0;
+	/**
+	 * Variable Boolean pour verifier si le joueur a reussi ou non de taper le monstre
+	 */
 	boolean t=true;
+	/**
+	 * Dans cette methode le joueur choisie de debuter un nouveau jeu ou de continuer si une partie est deja sauvegardee
+	 *et puis Map appelle le constructeur correspondant a son choix.
+	 *Et au cas ou il choisit de continuer la partie sauvegarder, le fichier sauvegarde est ouvert et le contenu est passee en argument dans le constructeur 
+	 *de Map
+	 * @throws TaperInterdit Cette exception est declanche lorsque le joueur tape le vide
+	 */
 	public void debuterJeu() throws TaperInterdit{
 		
 		FileInputStream fin = null;
@@ -148,6 +171,12 @@ public class Saisie {
 			
 		}
 	}
+	/**
+	 * C'est dans cette methode ou le jeu est controle,le joueur tape sa commande et l'exception tapeInterdit est jetee au cas ou c'est interdit qu'il tape
+	 * Et si il decide de sauvegarder la partie, le fichier sauvegarde est ouvert pour sauvegarder tous les membres correspondant de la carte dans Map
+	 * @param map argument correspondante au 
+	 * @throws TaperInterdit Exception au cas ou il tape un dragon alors qu'il est loin de lui
+	 */
 	public void commencerJeu(Map map) throws TaperInterdit
 	{
 		do
