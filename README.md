@@ -1,6 +1,12 @@
 # rogue-like
 ##Manuel Utilisateur
-Bonjour, ce jeu est un jeu rogue-like ou le joueur devra traverser 4 niveaux afin de gagner et a chaque niveau il devrai tuer tout les dragons afin de passer au prochain niveau. Il aura comme arme par defaut un Baton tandis q'une autre arme sera a ca disposition sur la carte de jeu.
+Bonjour, 
+Avant tout pour lancer le jeu vous devez utiliser les commandes suivante :
+* mvn package
+* java -jar target/rogue_like-0.0.1-SNAPSHOT.jar
+Parlons maintenant du fonctionnement du jeu:
+
+Ce jeu est un jeu rogue-like ou le joueur devra traverser 4 niveaux afin de gagner et a chaque niveau il devrai tuer tout les dragons afin de passer au prochain niveau. Il aura comme arme par defaut un Baton tandis q'une autre arme sera a ca disposition sur la carte de jeu.
 ####Voici les differentes representations sur la carte:
 * @ representera le joueur avec 20 points de vie et 20 points de magie
 * D les dragons qui font 1 de dommage au joueur au corp a corp
